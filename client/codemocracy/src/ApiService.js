@@ -1,7 +1,7 @@
 const BASE_URL = 'http://localhost:3001';
 
 function getTopics() {
-  return fetchRequest('/topics');
+  return fetchRequest('/topics')
 }
 
 function postTopic (body) {
@@ -11,7 +11,7 @@ function postTopic (body) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(body)
-  });
+  })
 }
 
 function deleteTopic (id) {
@@ -23,7 +23,7 @@ function deleteTopic (id) {
 function voteTopic (id, dir) {
   return fetchRequest(`/topics/${id}/${dir}`, {
     method: 'PUT'
-  });
+  })
 }
 
 function fetchRequest (path, options) {
